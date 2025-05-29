@@ -1,11 +1,17 @@
 //environmental variable goes on top inorder to configure them first (preferable)
+
 const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const express = require('express');
 //creating variable app and calling "express"
 const cors = require('cors');
 const app = express();
+
+const connectToDb = require('./db/db');
+
+connectToDb();
+
 //setup for cors 
 app.use(cors());
 
